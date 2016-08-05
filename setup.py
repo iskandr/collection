@@ -69,5 +69,5 @@ if __name__ == '__main__':
             "pandas",
         ],
         long_description=readme,
-        packages=['serializable'],
+        packages=['sercol'],
     )
