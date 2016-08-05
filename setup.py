@@ -38,7 +38,7 @@ except ImportError as e:
     print("Failed to convert %s to reStructuredText", readme_filename)
     pass
 
-with open('serializable/__init__.py', 'r') as f:
+with open('sercol/__init__.py', 'r') as f:
     version = re.search(
         r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
         f.read(),
