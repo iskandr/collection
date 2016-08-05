@@ -49,7 +49,7 @@ if not version:
 
 if __name__ == '__main__':
     setup(
-        name='collection',
+        name='sercol',
         version=version,
         description="Rich collection class with grouping and filtering helpers",
         author="Alex Rubinsteyn",

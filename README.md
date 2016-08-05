@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/iskandr/collection.svg?branch=master)](https://travis-ci.org/iskandr/collection)
+[![Build Status](https://travis-ci.org/iskandr/sercol.svg?branch=master)](https://travis-ci.org/iskandr/sercol)
 
-# collection
+# sercol
 Rich collection class with grouping and filtering helpers. Used as a base class
 for `varcode.EffectCollection`, `varcode.VariantCollection`, and `mhctools.EpitopeCollection`.
