@@ -17,9 +17,9 @@ import os.path
 from collections import defaultdict
 
 import pandas as pd
-from serializable import Serializable
+import serializable
 
-class Collection(Serializable):
+class Collection(serializable.Serializable):
     """
     Collection base class with grouping and filtering functions.
     """
@@ -63,7 +63,7 @@ class Collection(Serializable):
             sources=self.sources)
 
     def to_dataframe(self):
-        return pd.DataFrame.from_records([x.to_dict() for x in self])
+        return pd.DataFrame.from_records([serializable.to_dict(x) for x in self])
 
     def to_csv(self, path):
         return self.to_dataframe().to_csv(path)
