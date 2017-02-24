@@ -48,7 +48,10 @@ class Collection(serializable.Serializable):
         if distinct:
             elements = set(elements)
         self.sort_key = sort_key
-        self.elements = sorted(elements, key=sort_key)
+        if self.sort_key is None:
+            self.elements = elements
+        else:
+            self.elements = sorted(elements, key=sort_key)
         self.sources = sources
 
     def to_dict(self):
