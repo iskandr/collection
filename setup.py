@@ -53,7 +53,7 @@ if __name__ == '__main__':
         version=version,
         description="Rich collection class with grouping and filtering helpers",
         author="Alex Rubinsteyn",
-        author_email="alex {dot} rubinsteyn {at} mssm {dot} edu",
+        author_email="alex.rubinsteyn@mssm.edu",
         url="https://github.com/iskandr/collection",
         license="http://www.apache.org/licenses/LICENSE-2.0.html",
         classifiers=[
