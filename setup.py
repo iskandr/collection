@@ -1,4 +1,4 @@
-# Copyright (c) 2014. Mount Sinai School of Medicine
+# Copyright (c) 2014-2018. Mount Sinai School of Medicine
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ if __name__ == '__main__':
         description="Rich collection class with grouping and filtering helpers",
         author="Alex Rubinsteyn",
         author_email="alex.rubinsteyn@mssm.edu",
-        url="https://github.com/iskandr/collection",
+        url="https://github.com/openvax/sercol",
         license="http://www.apache.org/licenses/LICENSE-2.0.html",
         classifiers=[
             'Development Status :: 3 - Alpha',

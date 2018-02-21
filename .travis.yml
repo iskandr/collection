@@ -2,7 +2,7 @@ sudo: false  # Use container-based infrastructure
 language: python
 python:
   - "2.7"
-  - "3.4"
+  - "3.6"
 before_install:
   # Commands below copied from: http://conda.pydata.org/docs/travis.html
   # We do this conditionally because it saves us some downloading if the
@@ -20,16 +20,10 @@ before_install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
-addons:
-  apt:
-    packages:
-    # install pandoc for use with pypandoc for converting the README
-    # from markdown to RST
-    - pandoc
 install:
   - >
       conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION
-      nose pylint pandas
+      nose pylint pandas pandoc
   - source activate test-environment
   - pip install pypandoc
   - pip install -r requirements.txt
@@ -40,3 +34,12 @@ script:
   - nosetests test --verbose --with-coverage --cover-package=sercol
 after_success:
   coveralls
+deploy:
+  provider: pypi
+  user: openvax
+  distributions: sdist
+  password:
+    secure: "uZmWXkTgFk+TG1HgOlhVcI9/4aMkbTZE2r9pO1gRjPzTb2ssK8e5oKdmSWESB9GfDpahyGW6KrTH4lSQuiJ+ePMk7tNi81pc8mMQg0AzpI/2JGXUEomhf6OorBrDL8U2lxZhBeaTtfPvvXHL45F4tCdne3hZuFIgvPcU/CCXGlNbyG8+luE9QrWxS7Vudwgl9vsFGilDmvKTM16hMHAXf1A2Q2a5J4n6Nwr7cdEC041dsFa3+KiKP9dv9LUfB2dmTrCyH9CCBCt+RIOYhRCNzi5QTXLqUH5/EWCK+GNB3kksn2nsWt5FvmGJeuhc93zevrmhw+XttW7YWZOeucwTJY7kKGzQ65wLktbqgw1/avXffQGbNrcvsSNtBMcj9tp8eVtYrZXkhLL6fukVI8ZK35m8x+XHz01YUk8T6NLsSypHwc21B4hL6s52qcjjHGrBDHoCaa3cTPeAwepnqse0qrzmpotCKHmtjk4fyTTpStz8VcUi5WFrD0iP+dS4xtEMDRWwCLuYWob5VOKCUvpPu+1aMfN33zjikSyN1ooQVtmJzTgm3hFgzygbFDCBCvBydcfpgGj39TctkgJUFE5/wzfXhbokb0p04+IoDY79zPxyHWKBLZaaZZOB3vdv5a+fzAZR6boT3ENBkiuVbQ5gfSgN2B5wNTqiZ19Ouzu6cKY="
+  on:
+    branch: master
+    condition: $TRAVIS_PYTHON_VERSION = "2.7"
