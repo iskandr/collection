@@ -9,5 +9,6 @@
 </a>
 
 # sercol
+
 Rich collection class with grouping and filtering helpers. Used as a base class
 for `varcode.EffectCollection`, `varcode.VariantCollection`, and `mhctools.EpitopeCollection`.
