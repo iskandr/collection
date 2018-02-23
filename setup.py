@@ -22,18 +22,19 @@ current_directory = os.path.dirname(__file__)
 readme_filename = 'README.md'
 readme_path = os.path.join(current_directory, readme_filename)
 
-readme = ""
 try:
     with open(readme_path, 'r') as f:
-        readme = f.read()
+        readme_markdown = f.read()
 except IOError as e:
+    readme_markdown = ""
     print(e)
     print("Failed to open %s" % readme_path)
 
 try:
     import pypandoc
-    readme = pypandoc.convert(readme, to='rst', format='md')
+    readme_restructured = pypandoc.convert(readme_markdown, to='rst', format='md')
 except ImportError as e:
+    readme_restructured = readme_markdown
     print(e)
     print("Failed to convert %s to reStructuredText", readme_filename)
     pass
@@ -68,6 +69,6 @@ if __name__ == '__main__':
             "serializable",
             "pandas",
         ],
-        long_description=readme,
+        long_description=readme_restructured,
         packages=['sercol'],
     )
