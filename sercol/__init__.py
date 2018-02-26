@@ -16,6 +16,6 @@ from __future__ import print_function, division, absolute_import
 
 from .collection import Collection
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 __all__ = ["Collection"]
