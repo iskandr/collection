@@ -1,6 +1,4 @@
-<a href="https://travis-ci.org/openvax/sercol">
-    <img src="https://travis-ci.org/openvax/sercol.svg?branch=master" alt="Build Status" />
-</a>
+[![Tests](https://github.com/openvax/sercol/actions/workflows/tests.yml/badge.svg)](https://github.com/openvax/sercol/actions/workflows/tests.yml)
 <a href="https://coveralls.io/github/openvax/sercol?branch=master">
     <img src="https://coveralls.io/repos/openvax/sercol/badge.svg?branch=master&service=github" alt="Coverage Status" />
 </a>
