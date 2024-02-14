@@ -30,15 +30,6 @@ except IOError as e:
     print(e)
     print("Failed to open %s" % readme_path)
 
-try:
-    import pypandoc
-    readme_restructured = pypandoc.convert(readme_markdown, to='rst', format='md')
-except ImportError as e:
-    readme_restructured = readme_markdown
-    print(e)
-    print("Failed to convert %s to reStructuredText", readme_filename)
-    pass
-
 with open('sercol/__init__.py', 'r') as f:
     version = re.search(
         r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
@@ -54,11 +45,11 @@ if __name__ == '__main__':
         version=version,
         description="Rich collection class with grouping and filtering helpers",
         author="Alex Rubinsteyn",
-        author_email="alex.rubinsteyn@mssm.edu",
+        author_email="alex.rubinsteyn@unc.edu",
         url="https://github.com/openvax/sercol",
         license="http://www.apache.org/licenses/LICENSE-2.0.html",
         classifiers=[
-            'Development Status :: 3 - Alpha',
+            'Development Status :: 4 - Beta',
             'Environment :: Console',
             'Operating System :: OS Independent',
             'License :: OSI Approved :: Apache Software License',
@@ -69,6 +60,7 @@ if __name__ == '__main__':
             "serializable",
             "pandas",
         ],
-        long_description=readme_restructured,
+        long_description=readme_markdown,
+        long_description_content_type='text/markdown',
         packages=['sercol'],
     )
