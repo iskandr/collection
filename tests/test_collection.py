@@ -1,5 +1,3 @@
-# Copyright (c) 2015. Mount Sinai School of Medicine
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -15,7 +13,7 @@
 """
 Test methods shared by both VariantCollection and EffectCollection
 """
-from nose.tools import eq_, assert_not_equal
+from .common import eq_, neq_
 from sercol import Collection
 
 def test_collection_len():
@@ -35,7 +33,7 @@ def test_collection_neq():
     elements = ["a", "b", "c"]
     c1 = Collection(elements)
     c2 = Collection(elements[:2])
-    assert_not_equal(c1, c2)
+    neq_(c1, c2)
 
 def test_filter():
     collection = Collection([1, 2, 3, 4])
